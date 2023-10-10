@@ -39,4 +39,4 @@ class Service(models.Model):
         return self.WorkerID
 
     class Meta:
-        unique_together = ["Worker", "Service"]
+        unique_together = ["WorkerID", "ServiceType"]
