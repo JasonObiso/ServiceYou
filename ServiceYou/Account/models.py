@@ -36,7 +36,7 @@ class Service(models.Model):
     ServiceType = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.WorkerID
+        return self.ServiceID
 
     class Meta:
         unique_together = ["WorkerID", "ServiceType"]
