@@ -5,18 +5,17 @@ from django.db import models
 
 
 class User(models.Model):
-    Username = models.CharField(max_length=10, primary_key=True, null=False)
-    Password = models.CharField(max_length=20, null=False)
-    FirstName = models.CharField(max_length=30, null=False)
-    LastName = models.CharField(max_length=30, null=False)
-    MiddleName = models.CharField(max_length=30)
-    PhoneNo = models.CharField(max_length=11, null=False)
-    Email = models.EmailField()
-    Address = models.TextField()
+    username = models.CharField(max_length=10, primary_key=True, null=False)
+    password = models.CharField(max_length=20, null=False)
 
 
 class Client(User):
-    ClientID = models.CharField(max_length=10, primary_key=True, null=False)
+    firstname = models.CharField(max_length=30, null=False)
+    middlename = models.CharField(max_length=30, blank=True)
+    lastname = models.CharField(max_length=30, null=False)
+    phonenumber = models.CharField(max_length=11, null=False)
+    email = models.EmailField()
+    address = models.TextField()
 
     def __str__(self):
         return self.ClientID
